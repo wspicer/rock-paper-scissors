@@ -1,17 +1,35 @@
-let rock = "Rock";
-let paper = "Paper";
-let scissors = "Scissors";
+let rock = "rock";
+let paper = "paper";
+let scissors = "scissors";
+const playerSelection = "rock";
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3) + 1;
-    console.log(choice);
     if (choice === 1){
-        console.log(rock);
+        return rock;
     } else if (choice === 2) {
-        console.log(paper);
+        return paper;
         
     } else {
-        console.log(scissors);
+        return scissors;
     }
     
+}
+
+function playRound (playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        return "draw. Try again";
+    } else if (playerSelection === rock && computerSelection === paper) {
+        return "Computer Wins!";
+    } else if (playerSelection === paper && computerSelection === scissors) {
+        return "Computer Wins!";
+    } else if (playerSelection === scissors && computerSelection === rock) {
+        return "Computer Wins!";
+    } else if (playerSelection === rock && computerSelection === scissors) {
+        return "You Win";
+    } else if (playerSelection === paper && computerSelection === rock) {
+        return "You Win";
+    } else if (playerSelection === scissors && computerSelection === paper) {
+        return "You Win";
+    }
 }
