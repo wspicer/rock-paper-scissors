@@ -1,7 +1,8 @@
-let rock = "rock";
-let paper = "paper";
-let scissors = "scissors";
-const playerSelection = "rock";
+const rock = "rock";
+const paper = "paper";
+const scissors = "scissors";
+let playerSelection = "";
+const computerSelection = getComputerChoice()
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3) + 1;
@@ -31,5 +32,19 @@ function playRound (playerSelection, computerSelection) {
         return "You Win";
     } else if (playerSelection === scissors && computerSelection === paper) {
         return "You Win";
+    }
+}
+
+
+function playerPrompt () {
+    let promptQuestion = prompt("Rock, paper, or Scissors? Crush, crinkle, snip if you will");
+    if (promptQuestion.toLowerCase() === "rock") {
+        playerSelection = "rock";
+    } else if (promptQuestion.toLowerCase() === "paper") {
+        playerSelection = "paper";
+    } else if (promptQuestion.toLowerCase() === "scissors") {
+        playerSelection = "scissors";
+    } else {
+        promptQuestion;
     }
 }
