@@ -1,8 +1,8 @@
 const rock = "rock";
 const paper = "paper";
 const scissors = "scissors";
-let playerSelection = "";
-const computerSelection = getComputerChoice()
+let playerSelection = playerPrompt();
+const computerSelection = getComputerChoice();
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3) + 1;
@@ -21,17 +21,17 @@ function playRound (playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return "draw. Try again";
     } else if (playerSelection === rock && computerSelection === paper) {
-        return "Computer Wins!";
+        return "Computer Wins this round";
     } else if (playerSelection === paper && computerSelection === scissors) {
-        return "Computer Wins!";
+        return "Computer Wins this round";
     } else if (playerSelection === scissors && computerSelection === rock) {
-        return "Computer Wins!";
+        return "Computer Wins this round";
     } else if (playerSelection === rock && computerSelection === scissors) {
-        return "You Win";
+        return "You Win this round";
     } else if (playerSelection === paper && computerSelection === rock) {
-        return "You Win";
+        return "You Win this round";
     } else if (playerSelection === scissors && computerSelection === paper) {
-        return "You Win";
+        return "You Win this round";
     }
 }
 
@@ -39,11 +39,11 @@ function playRound (playerSelection, computerSelection) {
 function playerPrompt () {
     let promptQuestion = prompt("Rock, paper, or Scissors? Crush, crinkle, snip if you will");
     if (promptQuestion.toLowerCase() === "rock") {
-        playerSelection = "rock";
+        return rock;
     } else if (promptQuestion.toLowerCase() === "paper") {
-        playerSelection = "paper";
+        return paper;
     } else if (promptQuestion.toLowerCase() === "scissors") {
-        playerSelection = "scissors";
+        return "scissors";
     } else {
         promptQuestion;
     }
