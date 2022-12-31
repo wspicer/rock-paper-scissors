@@ -10,13 +10,76 @@
     </head>
     <body>
         <main>
-            <h1>Welcome to My Website</h1> 
+            <h1>A game of Rock, Paper, Scissors</h1>
+
+            <div id="scores">
+                <div id="player-score"></div>
+
+                <div id="computer-score"></div>
+            </div> 
+
+            <div id="container">
+                <div>
+                    <img src="./images/rock.jpg">
+                    <div class="button">
+                        <button id="rock">Rock</button>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="./images/paper.jpg">
+                    <div class="button">
+                        <button id="paper">Paper</button>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="./images/scissors.jpg">
+                    <div class="button">
+                        <button id="scissors">Scissors</button>
+                    </div>
+                </div>
+            </div>
             <script>
-           
+                //Creating divs for updating scores
+        const divPlayerScore = document.getElementById('player-score');
+        const divComputerScore = document.getElementById('computer-score');
+        divPlayerScore.textContent = "Your Score " + playerWins;
+        divComputerScore.textContent = "Computer Score " + computerWins;
+                //each button eventListeners
+        let rockButton = document.getElementById("rock");
+        let paperButton = document.getElementById("paper");
+        let scissorsButton = document.getElementById("scissors");
+             rockListen();
+             paperListen();
+             scissorsListen();
+               /* //each button eventListeners
+                let rockButton = document.getElementById("rock");
+                let paperButton = document.getElementById("paper");
+                let scissorsButton = document.getElementById("scissors");
+                let buttonType;
+                //each button has it's listener that will then run the playRound function with the appropriate
+                //score kept
+               rockButton.addEventListener("click", e => {
+               buttonType = rock;
+               console.log(buttonType);
+               console.log(playerSelection);
+               });
+
+               paperButton.addEventListener("click", e => {
+                buttonType = paper;
+                playRound(playerSelection,computerSelection);
+               });
+
+               scissorsButton.addEventListener("click", e => {
+                buttonType = scissors;
+                playRound(playerSelection,computerSelection);
+               });*/
+                
             //console.log(playerSelection);
             //console.log(computerSelection);
             //console.log(playRound(playerSelection, computerSelection));
-            console.log(game());
+            //console.log(game());
             </script> 
         </main>
     </body>
